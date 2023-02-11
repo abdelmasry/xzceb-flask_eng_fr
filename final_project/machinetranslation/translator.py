@@ -28,18 +28,20 @@ language_translator = LanguageTranslatorV3(
 
 language_translator.set_service_url(url)
 
+
 def englishtofrench(englishtext):
     """
     This function takes in a string in  English and returns a string in French.
     """
-    frenchtext = language_translator.translate(text=englishtext,model_id='en-fr').get_result()
+    frenchtext = language_translator.translate(text=englishtext, model_id='en-fr').get_result()
     frenchtext = frenchtext.get("translations")[0].get("translation")
     return frenchtext
+
 
 def frenchtoenglish(frenchtext):
     """
     This function takes in a string in French and returns a string in English.
     """
-    englishtext = language_translator.translate(text=frenchtext,model_id='fr-en').get_result()
+    englishtext = language_translator.translate(text=frenchtext, model_id='fr-en').get_result()
     englishtext = englishtext.get("translations")[0].get("translation")
     return englishtext
